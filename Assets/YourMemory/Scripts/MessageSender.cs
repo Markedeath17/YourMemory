@@ -11,7 +11,7 @@ public class MessageSender : MonoBehaviour
 
     public void Send(string message)
     {
-        if (string.IsNullOrEmpty(message)) return;
+        if (string.IsNullOrWhiteSpace(message)) return;
 
         var variant = Instantiate(_prefab, _rectTransform.position, _rectTransform.rotation, _rectTransform);
 
