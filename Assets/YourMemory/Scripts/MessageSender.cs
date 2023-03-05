@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 
-public class Messanger : MonoBehaviour
+public class MessageSender : MonoBehaviour
 {
     private List<TextMeshProUGUI> _texts = new List<TextMeshProUGUI>();
 
@@ -11,6 +11,8 @@ public class Messanger : MonoBehaviour
 
     public void Send(string message)
     {
+        if (string.IsNullOrEmpty(message)) return;
+
         var variant = Instantiate(_prefab, _rectTransform.position, _rectTransform.rotation, _rectTransform);
 
         variant.text = message;
